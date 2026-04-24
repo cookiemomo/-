@@ -31,11 +31,27 @@
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  body {
+  html, body {
+    background: #c8d6cb;
     font-family: 'Noto Sans TC', sans-serif;
-    background: #f4faf6;
     color: var(--text-body);
     min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .phone-frame {
+    width: 390px;
+    min-height: 100vh;
+    background: #f4faf6;
+    box-shadow: 0 8px 48px rgba(0,0,0,0.25);
+    overflow: hidden;
+  }
+
+  @media (max-width: 430px) {
+    html, body { background: #f4faf6; display: block; }
+    .phone-frame { width: 100%; box-shadow: none; }
   }
 
   /* ── HERO ── */
@@ -480,6 +496,7 @@
 </style>
 </head>
 <body>
+<div class="phone-frame">
 
 <!-- HERO -->
 <div class="hero">
@@ -725,10 +742,11 @@
 <footer>
   <div class="footer-title">中國醫藥大學　健康照護學院　健康照護科學研究所</div>
   <div class="footer-body">
-    本內容為研究計畫之衛教素材，僅供健康教育與研究參考使用<br>
-    不作為醫療診斷或治療依據，實際診療請諮詢中醫師
+    本內容為研究計畫之衛教素材，僅供健康教育與研究參考使用，<br>
+    不作為醫療診斷或治療依據，實際診療請諮詢中醫師。
   </div>
 </footer>
+</div><!-- /phone-frame -->
 
 <script>
 // ── TIP ACCORDION ──
